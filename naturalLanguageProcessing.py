@@ -62,6 +62,14 @@ def sugerirPalavra2(p1, p2):
     print(p1+" "+p2+" "+palavra1)
     print(p1+" "+p2+" "+palavra2)
     print(p1+" "+p2+" "+palavra3)
+    print()
+    print("Probabilidade de ser "+p1+" "+p2+" "+palavra1+": ",end="")
+    print(p_trigram(p1, p2, palavra1))
+    print("Probabilidade de ser "+p1+" "+p2+" "+palavra2+": ",end="")
+    print(p_trigram(p1, p2, palavra2))
+    print("Probabilidade de ser "+p1+" "+p2+" "+palavra3+": ",end="")
+    print(p_trigram(p1, p2, palavra3))
+
 
 def sugerirPalavra1(palavraX):
     palavras = []
@@ -100,24 +108,16 @@ def sugerirPalavra1(palavraX):
     print(palavraX+" "+palavra1)
     print(palavraX+" "+palavra2)
     print(palavraX+" "+palavra3)
-
+    
+    print()
+    print("Probabilidade de ser "+palavra1+": ",end="")
+    print(p_bigram(palavraX, palavra1))
+    print("Probabilidade de ser "+palavra2+": ",end="")
+    print(p_bigram(palavraX, palavra2))
+    print("Probabilidade de ser "+palavra3+": ",end="")
+    print(p_bigram(palavraX, palavra3))
+    print()
 
 sugerirPalavra1("the")
-print()
-print("Probabilidade de ser king: ",end="")
-print(p_bigram("the", "king"))
-print("Probabilidade de ser world: ",end="")
-print(p_bigram("the", "world"))
-print("Probabilidade de ser duke: ",end="")
-print(p_bigram("the", "duke"))
-print()
-
 sugerirPalavra2("the","king")
-print()
-print("Probabilidade de ser the king s: ",end="")
-print(p_trigram("the", "king", "s"))
-print("Probabilidade de ser the king and: ",end="")
-print(p_trigram("the", "king", "and"))
-print("Probabilidade de ser the king is: ",end="")
-print(p_trigram("the", "king", "is"))
 
